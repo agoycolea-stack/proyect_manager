@@ -1,0 +1,29 @@
+<h1> Index </h1>
+
+<%= form_tag proyects_index_path, method: :get do %>
+<%= select_tag(:search, options_for_select(['propuesta', 'progreso','terminado']))%>
+<%= submit_tag 'Filtrar'%>
+<% end %> 
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th> name </th>
+      <th> Description </th>
+      <th> Start Date </th>
+      <th> End Date </th>
+      <th> Status </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @proyects.each do |proyect| %>
+    <tr>
+    <td><%= proyect.name %></td>
+    <td><%= proyect.description %></td>
+    <td><%= proyect.start_date %></td>
+    <td><%= proyect.end_date %></td>
+    <td><%= proyect.status %></td>
+    <tr>
+    <% end %>
+  </tbody>
+</table>

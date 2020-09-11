@@ -1,0 +1,10 @@
+<h1>Proyects#new</h1>
+
+<%= form_with model: @proyect, url: proyects_create_path do |f| %>
+<%= f.text_field :name %>
+<%= f.text_field :description %>
+<%= f.date_field :start_date %>
+<%= f.date_field :end_date %>
+<%= f.select :status, ['propuesta','progreso','terminado']%>
+<%= f.submit 'Guardar'%>
+<% end %>
